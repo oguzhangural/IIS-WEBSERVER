@@ -16,5 +16,5 @@ jobs:
         uses: actions/checkout@v2  
 
       - name: Copy files to IIS server
-        run: Copy-Item -Path "C:\actions-runner\my_work\IIS-WEBSERVER\IIS-WEBSERVER\index.html" -Destination "C:\inetpub\wwwroot\index.html" -Force
+        run: Copy-Item -Path "C:\action-runner\my_work\IIS-WEBSERVER\IIS-WEBSERVER\index.html" -Destination "C:\inetpub\wwwroot\index.html" -Force
         shell: powershell

@@ -1,0 +1,20 @@
+name: Deploy to IIS Server
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "*.html" 
+
+jobs:
+  deploy:
+    runs-on: self-hosted 
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  
+
+      - name: Copy files to IIS server
+        run: Copy-Item -Path "C:\actions-runner\my_work\IIS-WEBSERVER\IIS-WEBSERVER\index.html" -Destination "C:\inetpub\wwwroot\index.html" -Force
+        shell: powershell
